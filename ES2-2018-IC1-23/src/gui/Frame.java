@@ -15,25 +15,24 @@ private static JFrame frame;
 		return frame;
 	}
 
-	public Frame(int a, int b) {
+	public Frame() {
 		
 		frame = new JFrame();
-		frame.setSize(a, b);
-		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setLocation((dimension.width-a)/2, (dimension.height-b)/2);
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
 		UserPanel.addUserContent();
 		AdminPanel.addAdminContent();
 		ButtonsPanel.addBottonsContent();
-		//frame.pack();
+		frame.pack();
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+		frame.setLocation((dimension.width-frame.getWidth())/2, (dimension.height-frame.getHeight())/2);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setVisible(true);
 		
 	}
 	
 	public static void main(String[] args) {
-		Frame frame = new Frame(700, 500);
+		new Frame();
 	}
 	
 }

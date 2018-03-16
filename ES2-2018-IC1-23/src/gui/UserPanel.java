@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,80 +22,84 @@ public class UserPanel {
 		Border border = BorderFactory.createLineBorder(Color.black, 1);
 		
 		JPanel clientPanel = new JPanel();
-		clientPanel.setLayout(new GridLayout(8,2));
+		clientPanel.setLayout(new GridLayout(9,1));
 		clientPanel.setBorder(border);
 		Frame.getFrame().add(clientPanel, BorderLayout.WEST);
 		
-		JPanel panel = new JPanel();
-		panel.setLayout(new BorderLayout());
-		clientPanel.add(panel);
+		JPanel emailPanel = new JPanel();
+		emailPanel.setLayout(new FlowLayout(0));
+		clientPanel.add(emailPanel);
 		
-		JCheckBox check = new JCheckBox("Li e tomei conhecimento");
-		clientPanel.add(check);
+		JPanel checkPanel = new JPanel();
+		checkPanel.setLayout(new FlowLayout(0));
+		clientPanel.add(checkPanel);
 		
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(new BorderLayout());
-		clientPanel.add(panel2);
+		JPanel namePanel = new JPanel();
+		namePanel.setLayout(new FlowLayout(0));
+		clientPanel.add(namePanel);
 		
-		JPanel panel3 = new JPanel();
-		panel3.setLayout(new BorderLayout());
-		clientPanel.add(panel3);
+		JPanel descriptionPanel = new JPanel();
+		descriptionPanel.setLayout(new FlowLayout(0));
+		clientPanel.add(descriptionPanel);
 		
-		JPanel panel4 = new JPanel();
-		panel4.setLayout(new BorderLayout());
-		clientPanel.add(panel4);
+		JPanel description2Panel = new JPanel();
+		description2Panel.setLayout(new BorderLayout());
+		clientPanel.add(description2Panel);
 		
-		JPanel panel5 = new JPanel();
-		panel5.setLayout(new BorderLayout());
-		clientPanel.add(panel5);
+		JPanel waitPanel = new JPanel();
+		waitPanel.setLayout(new FlowLayout(0));
+		clientPanel.add(waitPanel);
 		
-		JPanel panel6 = new JPanel();
-		panel6.setLayout(new BorderLayout());
-		clientPanel.add(panel6);		
+		JPanel hourPanel = new JPanel();
+		hourPanel.setLayout(new FlowLayout(0));
+		clientPanel.add(hourPanel);
 		
-		JPanel panel7 = new JPanel();
-		panel7.setLayout(new BorderLayout());
-		clientPanel.add(panel7);
+		JPanel variablesPanel = new JPanel();
+		variablesPanel.setLayout(new FlowLayout(0));
+		clientPanel.add(variablesPanel);		
 		
-	/*	addLabels();
-	}
+		JPanel okPanel = new JPanel();
+		okPanel.setLayout(new BorderLayout());
+		clientPanel.add(okPanel);
+		
+		JLabel emailLabel = new JLabel("E-mail:");
+		emailPanel.add(emailLabel);
+		
+		JTextField emailText = new JTextField("Introduza o seu e-mail");
+		emailPanel.add(emailText);
 	
-	private static void addLabels() {
-	*/	JLabel emailLabel = new JLabel("Email:");
-		panel.add(emailLabel, BorderLayout.LINE_START);
-		
-		JTextField emailText = new JTextField("Introduza o seu email");
-		panel.add(emailText);
+		JCheckBox check = new JCheckBox("Li e tomei conhecimento");
+		checkPanel.add(check);
 				
 		JLabel nameLabel = new JLabel("Nome:");
-		panel2.add(nameLabel, BorderLayout.LINE_START);
+		namePanel.add(nameLabel);
 
 		JTextField nameText = new JTextField("Nome do seu problema");
-		panel2.add(nameText);
+		namePanel.add(nameText);
 		
 		JLabel descriptionLabel = new JLabel("Descrição:");
-		panel3.add(descriptionLabel, BorderLayout.LINE_START);
+		descriptionPanel.add(descriptionLabel, BorderLayout.LINE_START);
 		
 		JTextField descriptionText = new JTextField("Descreva o seu problema");
-		panel3.add(descriptionText);
+		description2Panel.add(descriptionText);
 		
-		JLabel waitLabel = new JLabel("Tempo maximo de espera:");
-		panel4.add(waitLabel, BorderLayout.LINE_START);
+		JLabel waitLabel = new JLabel("Tempo máximo de espera:");
+		waitPanel.add(waitLabel);
 
 		JTextField waitText = new JTextField("Introduza o tempo");
-		panel4.add(waitText);
+		waitPanel.add(waitText);
 		
-		JLabel hourLabel = new JLabel("Melhor hora para receber resolução de problema:");
-		panel5.add(hourLabel, BorderLayout.LINE_START);
+		JLabel hourLabel = new JLabel("Hora que pretende receber a resolução do problema:");
+		hourPanel.add(hourLabel);
 
 		JTextField hourText = new JTextField("Introduza a hora");
-		panel5.add(hourText);
+		hourPanel.add(hourText);
 		
 		JLabel variablesLabel = new JLabel("Nº variáveis decisão:");
-		panel6.add(variablesLabel, BorderLayout.LINE_START);
+		variablesPanel.add(variablesLabel);
 
 		JTextField variablesText = new JTextField("Introduza o nº de variáveis");
-		panel6.add(variablesText);
+		variablesPanel.add(variablesText);
 		
 		JButton okButton= new JButton("Ok");
 		okButton.addActionListener(new ActionListener() {
@@ -102,7 +107,7 @@ public class UserPanel {
 			
 			}
 		});
-		panel7.add(okButton, BorderLayout.EAST);
+		okPanel.add(okButton, BorderLayout.EAST);
 		
 	}
 	
